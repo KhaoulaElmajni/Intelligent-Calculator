@@ -44,6 +44,12 @@ class IntelligentCalulator {
     private JTextField txtDisplay;
     private JTextField txtInputConvert;
 
+    double firstNum ;
+    double secondNum;
+    double result;
+    String operations;
+    String answer;
+
     /**
      * Launch the application.
      * @throws UnsupportedLookAndFeelException
@@ -180,7 +186,8 @@ class IntelligentCalulator {
         btn7.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-
+                String iNum = txtDisplay.getText() + btn7.getText();
+                txtDisplay.setText(iNum);
 
             }
         });
@@ -194,6 +201,10 @@ class IntelligentCalulator {
         btn8.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn8.getText();
+                txtDisplay.setText(iNum);
+
             }
         });
         btn8.setBounds(72, 146, 52, 51);
@@ -206,50 +217,127 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnC);
 
         JButton btn9 = new JButton("9");
+        btn9.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn9.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn9.setName("");
         btn9.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn9.setBounds(134, 146, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn9);
 
         JButton btnPM = new JButton("+/-");
+        btnPM.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = ops * (-1);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+
+        });
         btnPM.setFont(new Font("SansSerif", Font.BOLD, 18));
         btnPM.setBounds(196, 84, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnPM);
 
-        JButton btnSquare = new JButton("sq");
+        JButton btnSquare = new JButton("\u221A");
+        btnSquare.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.sqrt(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnSquare.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnSquare.setBounds(258, 84, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnSquare);
 
         JButton btnDiv = new JButton("/");
+        btnDiv.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                firstNum = Double.parseDouble(txtDisplay.getText());
+                txtDisplay.setText("");
+                operations = "/";
+
+            }
+        });
         btnDiv.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnDiv.setBounds(196, 146, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnDiv);
 
         JButton btnPrc = new JButton("%");
+        btnPrc.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                firstNum = Double.parseDouble(txtDisplay.getText());
+                txtDisplay.setText("");
+                operations = "%";
+
+            }
+        });
         btnPrc.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnPrc.setBounds(258, 146, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnPrc);
 
         JButton btn4 = new JButton("4");
+        btn4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn4.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn4.setName("");
         btn4.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn4.setBounds(10, 208, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn4);
 
         JButton btn5 = new JButton("5");
+        btn5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn5.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn5.setName("");
         btn5.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn5.setBounds(72, 208, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn5);
 
         JButton btn6 = new JButton("6");
+        btn6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn6.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn6.setName("");
         btn6.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn6.setBounds(134, 208, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn6);
 
         JButton btnMul = new JButton("*");
+        btnMul.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                firstNum = Double.parseDouble(txtDisplay.getText());
+                txtDisplay.setText("");
+                operations = "*";
+            }
+        });
         btnMul.setFont(new Font("SansSerif", Font.BOLD, 28));
         btnMul.setBounds(196, 208, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnMul);
@@ -260,24 +348,57 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn1X);
 
         JButton btn1 = new JButton("1");
+        btn1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn1.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn1.setName("");
         btn1.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn1.setBounds(10, 270, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn1);
 
         JButton btn2 = new JButton("2");
+        btn2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn2.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn2.setName("");
         btn2.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn2.setBounds(72, 270, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn2);
 
         JButton btn3 = new JButton("3");
+        btn3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn3.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn3.setName("");
         btn3.setFont(new Font("Tahoma", Font.BOLD, 20));
         btn3.setBounds(134, 270, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn3);
 
         JButton btnSub = new JButton("-");
+        btnSub.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                firstNum = Double.parseDouble(txtDisplay.getText());
+                txtDisplay.setText("");
+                operations = "-";
+
+            }
+        });
         btnSub.setFont(new Font("SansSerif", Font.BOLD, 28));
         btnSub.setBounds(196, 270, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnSub);
@@ -288,6 +409,14 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnEquals);
 
         JButton btn0 = new JButton("0");
+        btn0.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                String iNum = txtDisplay.getText() + btn0.getText();
+                txtDisplay.setText(iNum);
+
+            }
+        });
         btn0.setFont(new Font("SansSerif", Font.BOLD, 20));
         btn0.setBounds(10, 332, 115, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn0);
@@ -298,6 +427,15 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnPoint);
 
         JButton btnPlus = new JButton("+");
+        btnPlus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                firstNum = Double.parseDouble(txtDisplay.getText());
+                txtDisplay.setText("");
+                operations = "+";
+
+            }
+        });
         btnPlus.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnPlus.setBounds(196, 332, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnPlus);
