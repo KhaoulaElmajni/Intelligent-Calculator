@@ -4,7 +4,7 @@
 * <strong style="color:dark">Also some other functionalities that are new in calculators.
 
 # <span style="color:green">2.Technologies Used</span>:pushpin:
- #### <span style="color:#0036ad"> 1.JAVA Language:</span>
+ #### <span style="color:#0036ad"> 1.JAVA Language::white_check_mark:</span>
  * <strong style="color:dark">Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible. It is intended to let application developers write once, run anywhere (WORA),[16] meaning that compiled Java code can run on all platforms that support Java without the need for recompilation.[17] Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture.
 
 *see also* [JAVA](https://en.wikipedia.org/wiki/Java_(programming_language))
