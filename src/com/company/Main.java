@@ -343,6 +343,10 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnMul);
 
         JButton btn1X = new JButton("1/x");
+        btn1X.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
         btn1X.setFont(new Font("SansSerif", Font.BOLD, 16));
         btn1X.setBounds(258, 208, 52, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn1X);
@@ -404,6 +408,10 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnSub);
 
         JButton btnEquals = new JButton("=");
+        btnEquals.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
         btnEquals.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnEquals.setBounds(258, 270, 52, 113);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnEquals);
@@ -441,21 +449,51 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnPlus);
 
         JButton btnLog = new JButton("log");
+        btnLog.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.log(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnLog.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnLog.setBounds(336, 84, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnLog);
 
         JButton btnSin = new JButton("Sin");
+        btnSin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.sin(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnSin.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnSin.setBounds(406, 84, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnSin);
 
         JButton btnSinh = new JButton("Sinh");
+        btnSinh.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.sinh(ops);
+                txtDisplay.setText(String.valueOf(ops));
+            }
+        });
         btnSinh.setFont(new Font("SansSerif", Font.BOLD, 14));
         btnSinh.setBounds(478, 84, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnSinh);
 
         JButton btnMod = new JButton("Mod");
+        btnMod.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         btnMod.setFont(new Font("SansSerif", Font.BOLD, 16));
         btnMod.setBounds(554, 84, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnMod);
@@ -466,16 +504,39 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnPi);
 
         JButton btnCos = new JButton("Cos");
+        btnCos.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.cos(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnCos.setFont(new Font("SansSerif", Font.BOLD, 18));
         btnCos.setBounds(406, 146, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnCos);
 
         JButton btnCosh = new JButton("Cosh");
+        btnCosh.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.cosh(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnCosh.setFont(new Font("SansSerif", Font.BOLD, 12));
         btnCosh.setBounds(478, 146, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnCosh);
 
         JButton btnLnx = new JButton("lnx");
+        btnLnx.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         btnLnx.setFont(new Font("SansSerif", Font.BOLD, 18));
         btnLnx.setBounds(554, 146, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnLnx);
@@ -486,11 +547,29 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnXY);
 
         JButton btnTan = new JButton("Tan");
+        btnTan.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.tan(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnTan.setFont(new Font("SansSerif", Font.BOLD, 16));
         btnTan.setBounds(406, 208, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnTan);
 
         JButton btnTanh = new JButton("Tanh");
+        btnTanh.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.tanh(ops);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnTanh.setFont(new Font("SansSerif", Font.BOLD, 14));
         btnTanh.setBounds(478, 208, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnTanh);
@@ -516,7 +595,16 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnRund);
 
         JButton btnp =
-                new JButton("2*P");
+                new JButton("2*\u03C0");
+        btnp.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops;
+                ops = (3.1415926535897932384626433832795)*2;
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnp.setName("btn2P");
         btnp.setFont(new Font("SansSerif", Font.BOLD, 18));
         btnp.setBounds(554, 270, 62, 51);
@@ -528,16 +616,40 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnX3);
 
         JButton btnBin = new JButton("Bin");
+        btnBin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                int a = Integer.parseInt(txtDisplay.getText());//Binary
+                txtDisplay.setText(Integer.toString(a, 2));
+
+            }
+        });
         btnBin.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnBin.setBounds(406, 332, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnBin);
 
         JButton btnHex = new JButton("Hex");
+        btnHex.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                int a = Integer.parseInt(txtDisplay.getText());//Binary
+                txtDisplay.setText(Integer.toString(a, 16));
+
+            }
+        });
         btnHex.setFont(new Font("SansSerif", Font.BOLD, 16));
         btnHex.setBounds(478, 332, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnHex);
 
         JButton btnOct = new JButton("Oct");
+        btnOct.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                int a = Integer.parseInt(txtDisplay.getText());//Binary
+                txtDisplay.setText(Integer.toString(a, 8));
+
+            }
+        });
         btnOct.setFont(new Font("SansSerif", Font.BOLD, 20));
         btnOct.setBounds(554, 332, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnOct);
