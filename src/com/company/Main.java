@@ -50,6 +50,20 @@ class IntelligentCalulator {
     String operations;
     String answer;
 
+    double [] i = new double[5];
+
+    double Moroccan_Dirham = 10.04;
+    double  Nigerian_Naira = 535.96;
+    double US_Dollar = 1.52;
+    double Kenyan_Shilling = 156.21;
+    double Brazilian_Real = 5.86;
+    double Canadian_Dollar = 2.03;
+    double Indian_Rupee = 100.68;
+    double Philipine_Peso = 71.74;
+    double Indonesian_Rupiah = 20746.75;
+
+
+
     /**
      * Launch the application.
      * @throws UnsupportedLookAndFeelException
@@ -86,7 +100,7 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\DESKTOP\\education.png"));
         frmIntelligentcalculatorByKhaoula.setFont(new Font("Dialog", Font.BOLD, 12));
         frmIntelligentcalculatorByKhaoula.setTitle("Intelligent_Calculator By KHAOULA ELMAJNI");
-        frmIntelligentcalculatorByKhaoula.setBounds(100, 100,941, 478);
+        frmIntelligentcalculatorByKhaoula.setBounds(100, 100,341, 478);
         frmIntelligentcalculatorByKhaoula.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JMenuBar menuBar = new JMenuBar();
@@ -177,6 +191,9 @@ class IntelligentCalulator {
         btnCe.setFont(new Font("Tahoma", Font.BOLD, 14));
         btnCe.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
+                txtDisplay.setText(null);
+
             }
         });
         btnCe.setBounds(72, 84, 52, 51);
@@ -211,6 +228,13 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btn8);
 
         JButton btnC = new JButton("C");
+        btnC.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                txtDisplay.setText(null);
+
+            }
+        });
         btnC.setName("");
         btnC.setFont(new Font("Tahoma", Font.BOLD, 20));
         btnC.setBounds(134, 84, 52, 51);
@@ -345,6 +369,11 @@ class IntelligentCalulator {
         JButton btn1X = new JButton("1/x");
         btn1X.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = 1 / ops ;
+                txtDisplay.setText(String.valueOf(ops));
+
             }
         });
         btn1X.setFont(new Font("SansSerif", Font.BOLD, 16));
@@ -437,6 +466,18 @@ class IntelligentCalulator {
                 else if(operations == "/")
                 {
                     result = firstNum / secondNum;
+                    answer = String.format("%.2f", result);
+                    txtDisplay.setText(answer);
+                }
+                else if(operations == "%")
+                {
+                    result = firstNum % secondNum;
+                    answer = String.format("%.2f", result);
+                    txtDisplay.setText(answer);
+                }
+                else if(operations == "Mod")
+                {
+                    result = firstNum % secondNum;
                     answer = String.format("%.2f", result);
                     txtDisplay.setText(answer);
                 }
@@ -704,6 +745,15 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnp);
 
         JButton btnX3 = new JButton("X^3");
+        btnX3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double ops = Double.parseDouble(String.valueOf(txtDisplay.getText()));
+                ops = Math.pow(ops, 3);
+                txtDisplay.setText(String.valueOf(ops));
+
+            }
+        });
         btnX3.setFont(new Font("SansSerif", Font.BOLD, 18));
         btnX3.setBounds(336, 332, 62, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnX3);
@@ -773,11 +823,72 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(lblDisplayConvert);
 
         JButton btnConvets = new JButton("Convert");
+        btnConvets.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                double British_pound = Double.parseDouble(txtInputConvert.getText());
+                if(jcmCurrency.getSelectedItem().equals("Nigeria"))
+                {
+                    String Converts1 = String.format("N %.2f", British_pound * Nigerian_Naira);
+                    lblDisplayConvert.setText(Converts1);
+                }
+                if(jcmCurrency.getSelectedItem().equals("USA"))
+                {
+                    String Converts2 = String.format("$ %.2f", British_pound * US_Dollar);
+                    lblDisplayConvert.setText(Converts2);
+                }
+                if(jcmCurrency.getSelectedItem().equals("Kenyan"))
+                {
+                    String Converts3 = String.format("KS %.2f", British_pound * Kenyan_Shilling);
+                    lblDisplayConvert.setText(Converts3);
+                }
+                if(jcmCurrency.getSelectedItem().equals("Canada"))
+                {
+                    String Converts4 = String.format("C$ %.2f", British_pound * Canadian_Dollar);
+                    lblDisplayConvert.setText(Converts4);
+                }
+                if(jcmCurrency.getSelectedItem().equals("Brazil"))
+                {
+                    String Converts5 = String.format("Bra %.2f", British_pound * Brazilian_Real);
+                    lblDisplayConvert.setText(Converts5);
+                }
+                if(jcmCurrency.getSelectedItem().equals("India"))
+                {
+                    String Converts6 = String.format("INR %.2f", British_pound * Indian_Rupee);
+                    lblDisplayConvert.setText(Converts6);
+                }
+                if(jcmCurrency.getSelectedItem().equals("Philippine"))
+                {
+                    String Converts7 = String.format("PHP %.2f", British_pound * Philipine_Peso);
+                    lblDisplayConvert.setText(Converts7);
+                }
+                if(jcmCurrency.getSelectedItem().equals("Indonesia"))
+                {
+                    String Converts8 = String.format("IDR %.2f", British_pound * Indonesian_Rupiah);
+                    lblDisplayConvert.setText(Converts8);
+                }
+                if(jcmCurrency.getSelectedItem().equals("Morocco"))
+                {
+                    String Converts9 = String.format("MAD %.2f", British_pound * Moroccan_Dirham);
+                    lblDisplayConvert.setText(Converts9);
+                }
+
+            }
+        });
         btnConvets.setFont(new Font("Tahoma", Font.BOLD, 14));
         btnConvets.setBounds(661, 307, 89, 46);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnConvets);
 
         JButton btnClear = new JButton("Clear");
+        btnClear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                txtInputConvert.setText(null);
+                lblDisplayConvert.setText(null);
+                jcmCurrency.setSelectedItem("Choose One...");
+
+            }
+        });
         btnClear.setFont(new Font("Tahoma", Font.BOLD, 14));
         btnClear.setBounds(794, 307, 89, 46);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnClear);
