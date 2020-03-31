@@ -37,6 +37,8 @@ import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.ImageIcon;
+import java.awt.Window.Type;
+
 
 class IntelligentCalulator {
 
@@ -68,6 +70,7 @@ class IntelligentCalulator {
      * Launch the application.
      * @throws UnsupportedLookAndFeelException
      */
+
     public static void main(String[] args) throws UnsupportedLookAndFeelException {
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
         EventQueue.invokeLater(new Runnable() {
@@ -94,16 +97,18 @@ class IntelligentCalulator {
      */
     private void initialize() {
         frmIntelligentcalculatorByKhaoula = new JFrame();
-        frmIntelligentcalculatorByKhaoula.getContentPane().setBackground(new Color(175, 238, 238));
-        frmIntelligentcalculatorByKhaoula.setBackground(new Color(173, 216, 230));
+        frmIntelligentcalculatorByKhaoula.setType(Type.POPUP);
+        frmIntelligentcalculatorByKhaoula.getContentPane().setBackground(new Color(173, 216, 230));
+        frmIntelligentcalculatorByKhaoula.setBackground(new Color(51, 204, 255));
         frmIntelligentcalculatorByKhaoula.getContentPane().setFont(new Font("Tahoma", Font.BOLD, 14));
         frmIntelligentcalculatorByKhaoula.setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\DESKTOP\\education.png"));
         frmIntelligentcalculatorByKhaoula.setFont(new Font("Dialog", Font.BOLD, 12));
         frmIntelligentcalculatorByKhaoula.setTitle("Intelligent_Calculator By KHAOULA ELMAJNI");
-        frmIntelligentcalculatorByKhaoula.setBounds(100, 100,341, 478);
+        frmIntelligentcalculatorByKhaoula.setBounds(100, 100,339, 478);
         frmIntelligentcalculatorByKhaoula.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JMenuBar menuBar = new JMenuBar();
+        menuBar.setFont(new Font("SansSerif", Font.BOLD, 14));
         menuBar.setBackground(Color.WHITE);
         frmIntelligentcalculatorByKhaoula.setJMenuBar(menuBar);
 
@@ -128,7 +133,7 @@ class IntelligentCalulator {
             public void actionPerformed(ActionEvent e) {
 
                 frmIntelligentcalculatorByKhaoula.setTitle("Scientific Calculator");
-                frmIntelligentcalculatorByKhaoula.setBounds(100, 100,650, 520);
+                frmIntelligentcalculatorByKhaoula.setBounds(100, 100,640, 520);
                 txtDisplay.setBounds(10, 11,364, 51);
 
             }
@@ -168,6 +173,7 @@ class IntelligentCalulator {
         txtDisplay.setColumns(10);
 
         JButton btnBackSpace = new JButton("<-");
+        btnBackSpace.setBackground(Color.LIGHT_GRAY);
         btnBackSpace.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -437,6 +443,7 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnSub);
 
         JButton btnEquals = new JButton("=");
+        btnEquals.setBackground(Color.RED);
         btnEquals.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -798,6 +805,7 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnOct);
 
         JComboBox jcmCurrency = new JComboBox();
+        jcmCurrency.setBackground(new Color(224, 255, 255));
         jcmCurrency.setMaximumRowCount(10);
         jcmCurrency.setFont(new Font("Tahoma", Font.BOLD, 16));
         jcmCurrency.setModel(new DefaultComboBoxModel(new String[] {"Choose One...", "USA", "Nigeria", "Canada", "Brasil", "Indonesia", "Philipine", "India", "Morocco"}));
@@ -805,8 +813,9 @@ class IntelligentCalulator {
         frmIntelligentcalculatorByKhaoula.getContentPane().add(jcmCurrency);
 
         JLabel lblCurrencyConversion = new JLabel("Currency Conversion");
-        lblCurrencyConversion.setFont(new Font("Tahoma", Font.BOLD, 22));
-        lblCurrencyConversion.setBounds(643, 11, 240, 51);
+        lblCurrencyConversion.setIcon(new ImageIcon("C:\\Users\\khaoula\\Desktop\\App Icons\\edit_status.png"));
+        lblCurrencyConversion.setFont(new Font("Tahoma", Font.BOLD, 20));
+        lblCurrencyConversion.setBounds(619, 8, 276, 51);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(lblCurrencyConversion);
 
         txtInputConvert = new JTextField();
@@ -816,7 +825,7 @@ class IntelligentCalulator {
         txtInputConvert.setColumns(10);
 
         JLabel lblDisplayConvert = new JLabel("");
-        lblDisplayConvert.setBackground(new Color(255, 255, 255));
+        lblDisplayConvert.setBackground(Color.WHITE);
         lblDisplayConvert.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
         lblDisplayConvert.setHorizontalAlignment(SwingConstants.CENTER);
         lblDisplayConvert.setBounds(656, 236, 227, 39);
@@ -892,5 +901,6 @@ class IntelligentCalulator {
         btnClear.setFont(new Font("Tahoma", Font.BOLD, 14));
         btnClear.setBounds(794, 307, 89, 46);
         frmIntelligentcalculatorByKhaoula.getContentPane().add(btnClear);
+
     }
 }
