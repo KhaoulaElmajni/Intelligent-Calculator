@@ -58,6 +58,9 @@ they are like following:
 :::success
 yeaaaah it's like that :white_check_mark: 
 :::
+![](https://i.imgur.com/Y8m8zqt.jpg)
+>Here you can choose the country that you want calculate the currency
+---
 ![](https://i.imgur.com/pIomE4m.png)
 
 * <strong style="color: dark ; opacity: 0.80">Finally I want say thank you to the one and only, My professor Mr BADDI YOUSSEF *Doctor Assistant in UCD* for his supporting  and encouraging to us, also for giving us this opportunity to improve our skills.
