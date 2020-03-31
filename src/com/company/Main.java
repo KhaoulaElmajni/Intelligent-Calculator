@@ -410,6 +410,37 @@ class IntelligentCalulator {
         JButton btnEquals = new JButton("=");
         btnEquals.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
+                String answer ;
+                secondNum = Double.parseDouble(txtDisplay.getText());
+                if(operations == "+")
+                {
+                    result = firstNum + secondNum;
+                    answer = String.format("%.2f", result);
+                    txtDisplay.setText(answer);
+                }
+
+                else if(operations == "-")
+                {
+                    result = firstNum - secondNum;
+                    answer = String.format("%.2f", result);
+                    txtDisplay.setText(answer);
+                }
+
+                else if(operations == "*")
+                {
+                    result = firstNum * secondNum;
+                    answer = String.format("%.2f", result);
+                    txtDisplay.setText(answer);
+                }
+
+                else if(operations == "/")
+                {
+                    result = firstNum / secondNum;
+                    answer = String.format("%.2f", result);
+                    txtDisplay.setText(answer);
+                }
+
             }
         });
         btnEquals.setFont(new Font("SansSerif", Font.BOLD, 20));
